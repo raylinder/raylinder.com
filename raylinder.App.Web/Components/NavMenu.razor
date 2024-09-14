@@ -1,0 +1,62 @@
+﻿<div class="navbar navbar-dark pb-0">
+    <div class="container-fluid">
+        <a class="navbar-brand text-uppercase" href="">Relentless. Results.</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link text-uppercase px-2" href="#About" Match="NavLinkMatch.All">
+                > About
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link text-uppercase px-2" href="#Experience">
+                 > Experience
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link text-uppercase px-2" href="#FeaturedWork">
+                > Featured Work
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link text-uppercase px-2" href="#PetProjects">
+                > Pet Projects
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link text-uppercase px-2" href="#Social">
+                > Social
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link text-uppercase px-2" href="#Contact">
+                > Contact
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link text-uppercase px-2" href="#Resume">
+                > Resume
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+    }
+
+
+

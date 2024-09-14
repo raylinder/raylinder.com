@@ -1,0 +1,141 @@
+﻿@page "/"
+
+<PageTitle>Ray Linder. Relentless. Results.</PageTitle>
+
+<div>
+    <div>
+        <div class="d-flex justify-content-center align-items-center flex-wrap text-center" style="min-height: 100vh;">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-1">Ray Linder</h1>
+                    <h4 class="text-uppercase text-body-secondary">Senior Software Engineer.</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 py-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="h3 pb-2 mb-4 fw-light text-primary text-uppercase border-bottom border-secondary" id="About">
+                            About.
+                        </div>
+                    </div>
+                </div>
+                <div class="row py-5">
+                    <div class="col-4">
+                        <div class="d-flex align-items-center justify-content-center text-center">
+                            <img src="/img/20220228_152121~3_552x552.jpg" class="rounded-4 w-75" alt="..." />
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="h4 text-body-primary ps-3 text-uppercase border-start border-primary">
+                            Senior Software Engineer.
+                        </div>
+                        <div class="lead">
+                            With two decades of hands-on experience, I offer a deep well of expertise in software engineering. My proven ability to lead high-performing teams,
+                            architect scalable solutions, and stay abreast of emerging technologies aligns seamlessly with the demands of the Senior Software Engineer role. I
+                            am always excited about opportunities to leverage my experience to drive innovation and contribute to the continued success of the team.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <Experience />
+        <FeaturedWork />
+        <PetProjects />
+        <div class="row">
+            <div class="col-12 py-5">
+                <div class="row pt-5">
+                    <div class="col-12">
+                        <div class="h4 pb-2 mb-4 fw-light text-primary text-uppercase border-bottom border-secondary" id="Social">
+                            Social.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-3">
+                        <h4>LinkedIn</h4>
+                        <p>
+                            <a href="http://www.linkedin.com/in/raylinder" target="_blank">http://www.linkedin.com/in/raylinder</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <Contact />
+        <div class="row">
+            <div class="col-12 py-5">
+                <div class="row pt-5">
+                    <div class="col-12">
+                        <div class="h4 pb-2 mb-4 fw-light text-primary text-uppercase border-bottom border-secondary" id="Resume">
+                            Resume.
+                        </div>
+                    </div>
+                </div>
+                <div class="row py-5">
+                    <div class="col-4">
+                        <div class="d-flex align-items-center justify-content-center text-center">
+                            <img src="/img/rl-resume.jpg" class="rounded-4 w-75" alt="Ray Linder Resume" />
+                        </div>
+                    </div>
+                    <div class="col-8 pe-5">
+                        <div class="list-group text-uppercase">
+                            <a class="list-group-item list-group-item-action" download target="_blank" href="/resume/ray_linder_resume_20240819.pdf">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 py-5">
+                <div class="row pt-5">
+                    <div class="col-12">
+                        <div class="h4 pb-2 mb-4 fw-light text-primary text-uppercase border-bottom border-secondary" id="Status">
+                            Project Release Status.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-header">
+                                <h5 class="mb-0">Kin of Me Status</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-muted card-subtitle">Release Build</p>
+                                <p class="card-text"><img src="https://dev.azure.com/AffinityLogic/Kin%20of%20Me/_apis/build/status/Kin%20of%20Me-ASP.NET%20Core-CI" alt="" /></p>
+                                @* <p class="text-muted card-subtitle mt-3">Production Deployment</p><img src="https://vsrm.dev.azure.com/adorelogic/_apis/public/Release/badge/577311d2-59d6-4857-9aac-2cbfdadc4727/3/5" alt="" />
+                                <p class="card-text"></p> *@
+                                <p class="text-muted card-subtitle mt-3">Release Deployment</p><img src="https://vsrm.dev.azure.com/adorelogic/_apis/public/Release/badge/577311d2-59d6-4857-9aac-2cbfdadc4727/3/4" alt="" />
+                                <p class="card-text"></p>
+                                <p class="text-muted card-subtitle mt-3">Time Spent</p><img src="https://wakatime.com/badge/user/2210aad6-9744-4617-aab9-43ea05f33826/project/7b03f370-5a10-4111-a68f-81dd133d4040.svg?style=flat" alt="wakatime">
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-header">
+                                <h5 class="mb-0">raylinder.com Release Status</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-muted card-subtitle">Build</p>
+                                <p class="card-text"><img src="https://dev.azure.com/raylinder/raylinder.com/_apis/build/status/raylinder.com-ASP.NET%20Core-CI" alt="" /></p>
+                                <p class="text-muted card-subtitle mt-3">Deployment</p>
+                                <p class="card-text"><img src="https://vsrm.dev.azure.com/raylinder/_apis/public/Release/badge/011b2b75-20aa-42c8-8056-3f55b89be7cf/2/2" alt="" /></p>
+                                <p class="text-muted card-subtitle mt-3">Time Spent</p><img src="https://wakatime.com/badge/user/2210aad6-9744-4617-aab9-43ea05f33826/project/dc402183-babc-4e0c-a28e-c3dfbbad3d94.svg?style=flat" alt="wakatime">
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@code
+{
+
+}
