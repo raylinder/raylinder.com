@@ -5,6 +5,10 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.App.Web", "raylinder.App.Web\raylinder.App.Web.csproj", "{D59B706D-AEE7-4CA5-80BE-EA2DBE1D2EEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.API", "raylinder.API\raylinder.API.csproj", "{952E71AD-0E87-4E6D-A96C-CAF51636CE00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.App.Mobile", "raylinder.App.Mobile\raylinder.App.Mobile.csproj", "{DC694E5F-1216-4E2B-9D5D-827A8D08471B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{D59B706D-AEE7-4CA5-80BE-EA2DBE1D2EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D59B706D-AEE7-4CA5-80BE-EA2DBE1D2EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D59B706D-AEE7-4CA5-80BE-EA2DBE1D2EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{952E71AD-0E87-4E6D-A96C-CAF51636CE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952E71AD-0E87-4E6D-A96C-CAF51636CE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952E71AD-0E87-4E6D-A96C-CAF51636CE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952E71AD-0E87-4E6D-A96C-CAF51636CE00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC694E5F-1216-4E2B-9D5D-827A8D08471B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC694E5F-1216-4E2B-9D5D-827A8D08471B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC694E5F-1216-4E2B-9D5D-827A8D08471B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DC694E5F-1216-4E2B-9D5D-827A8D08471B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC694E5F-1216-4E2B-9D5D-827A8D08471B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC694E5F-1216-4E2B-9D5D-827A8D08471B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
