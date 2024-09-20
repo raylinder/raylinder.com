@@ -1,4 +1,11 @@
-﻿
+﻿@using Microsoft.AspNetCore.Components.WebAssembly.Hosting
+@using raylinder.Models
+
+@inject IWebAssemblyHostEnvironment _hostEnvironment
+@inject NavigationManager _navigationManager
+@* @inject ApiAuthenticationStateProvider _apiAuthenticationStateProvider*@
+@inject IBaseDomain _base
+
 <div class="row">
     <div class="col-12 py-5">
         <div class="row pt-5">
@@ -9,8 +16,26 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 pt-3">
-                
+            <div class="col-12 pt-3 align-middle">
+                <MudCarousel Class="align-self-auto" Style="height: 500px; width: auto;" ShowArrows="true" ShowBullets="true" EnableSwipeGesture="true" AutoCycle="true" TData="object">
+                    @foreach (var project in projects)
+                    {
+                        <MudCarouselItem Transition="Transition.Fade">
+                            <MudCard Class="bg-black">
+                                @* <MudCardMedia Image="@project.ImageUrl" Height="300" Class="rounded-2 card-img-top top" /> *@
+                                <MudImage Fluid="true" Src="@project.ImageUrl" Alt="@project.Title" Class="rounded-lg" Style="height: 300px; width: 810px" ObjectFit="ObjectFit.Cover" ObjectPosition="ObjectPosition.Top" />
+                                <MudCardContent Class="bg-black">
+                                    <MudText Typo="Typo.h5">@project.Title</MudText>
+                                    <MudText Typo="Typo.subtitle2" Class="text-dark">@project.Description</MudText>
+                                </MudCardContent>
+                                <MudCardActions>
+                                    <MudLink Class="btn btn-primary text-white" Href="@project.WebsiteUrl" Target="_blank">Visit Project</MudLink>
+                                </MudCardActions>
+                            </MudCard>
+                                @* <MudImage Fluid="true" Src="@project.ImageUrl" Alt="@project.Title" Class="rounded-lg" /> *@
+                        </MudCarouselItem>
+                    }
+                </MudCarousel>
             </div>
         </div>
     </div>
@@ -18,5 +43,15 @@
 
 
 @code {
+    private List<WorkProject>? projects = new();
 
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        var workProjects = await _base.FeaturedWorkService.Get();
+
+        projects = workProjects.ToList();
+    }
 }

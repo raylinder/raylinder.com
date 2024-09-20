@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace raylinder.App.Mobile;
+namespace raylinder.App.Mobile.Platforms.iOS;
 public class Program
 {
     // This is the main entry point of the application.

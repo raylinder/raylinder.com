@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.API", "raylinder.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.App.Mobile", "raylinder.App.Mobile\raylinder.App.Mobile.csproj", "{DC694E5F-1216-4E2B-9D5D-827A8D08471B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.Models", "raylinder.API.Models\raylinder.Models.csproj", "{AF9C5F39-98CC-4723-80CC-344719EB506F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.API.Domains", "raylinder.API.Domains\raylinder.API.Domains.csproj", "{35384D5F-45CF-499B-8565-8CC1648C7CB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.App.Web.Services", "raylinder.App.Web.Services\raylinder.App.Web.Services.csproj", "{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +35,18 @@ Global
 		{DC694E5F-1216-4E2B-9D5D-827A8D08471B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC694E5F-1216-4E2B-9D5D-827A8D08471B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC694E5F-1216-4E2B-9D5D-827A8D08471B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AF9C5F39-98CC-4723-80CC-344719EB506F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF9C5F39-98CC-4723-80CC-344719EB506F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF9C5F39-98CC-4723-80CC-344719EB506F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF9C5F39-98CC-4723-80CC-344719EB506F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35384D5F-45CF-499B-8565-8CC1648C7CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35384D5F-45CF-499B-8565-8CC1648C7CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35384D5F-45CF-499B-8565-8CC1648C7CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35384D5F-45CF-499B-8565-8CC1648C7CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

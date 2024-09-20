@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace raylinder.App.Mobile;
+namespace raylinder.App.Mobile.Platforms.iOS;
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate
 {

@@ -12,6 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\raylinder.API.Domains\raylinder.API.Domains.csproj" />
+    <ProjectReference Include="..\raylinder.API.Models\raylinder.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
