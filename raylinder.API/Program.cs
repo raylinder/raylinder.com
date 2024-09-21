@@ -26,13 +26,8 @@ if (env != null)
     builder.Services.AddCors(options =>
     {
         options.AddDefaultPolicy(policy =>
-            //policy.WithOrigins(environmentWebsiteUrl).AllowAnyHeader().AllowAnyMethod().AllowCredentials()
-            policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials()
+            policy.WithOrigins(environmentWebsiteUrl).AllowAnyHeader().AllowAnyMethod().AllowCredentials()
         );
-
-        //options.AddPolicy("AllowSpecificOrigin", policy =>
-        //    policy.WithOrigins(environmentWebsiteUrl).AllowAnyHeader().AllowAnyMethod().AllowCredentials()
-        //);
     });
 }
 
@@ -67,7 +62,6 @@ app.UseSwaggerUI();
 app.UseStaticFiles(); // 🔴 here it is
 app.UseRouting(); // 🔴 here it is
 
-//app.UseCors("AllowSpecificOrigin");
 app.UseCors();
 app.UseAuthorization();
 
