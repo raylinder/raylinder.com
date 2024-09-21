@@ -43,10 +43,8 @@ builder.Services.AddLogging(loggingBuilder =>
 
 builder.Services.AddScoped<IFeaturedWorkManager, FeaturedWorkManager>();
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -55,9 +53,8 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// if getting "has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource." error, must use these 2 BEFORE app.UseCors();
-app.UseStaticFiles(); // 🔴 here it is
-app.UseRouting(); // 🔴 here it is
+app.UseStaticFiles();
+app.UseRouting();
 
 app.UseCors();
 app.UseAuthorization();
