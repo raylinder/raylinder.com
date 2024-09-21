@@ -1,15 +1,12 @@
 ﻿using raylinder.API.Domains;
 
-var policyName = "CorsPolicy";
 var environmentWebsiteUrl = "";
 
 var builder = WebApplication.CreateBuilder(args);
 var env = builder.Environment;
 
-
 if (env != null)
 {
-
     builder.Configuration.SetBasePath(env.ContentRootPath).AddEnvironmentVariables();
 
     switch (env.EnvironmentName)

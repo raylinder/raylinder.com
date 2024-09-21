@@ -17,8 +17,7 @@ switch (hostEnvironment.Environment)
 {
     case "Local":
     case "Development":
-        //environmentApiUrl = "http://localhost:5109";
-        environmentApiUrl = "http://raylinder-api.azurewebsites.net";
+        environmentApiUrl = "http://localhost:5109";
         logLevel = LogLevel.Trace;
         break;
     case "Production":
@@ -35,8 +34,6 @@ builder.Services.AddHttpClient("WebAPI.Anonymous", client =>
 
     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 });
-
-//builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("WebAPI.Anonymous"));
 
 builder.Services.AddBlazoredLocalStorage();
 
