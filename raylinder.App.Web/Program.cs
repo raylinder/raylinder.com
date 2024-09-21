@@ -17,8 +17,8 @@ switch (hostEnvironment.Environment)
 {
     case "Local":
     case "Development":
-        environmentApiUrl = "http://localhost:5109";
-        //environmentApiUrl = "http://raylinder-api.azurewebsites.net";
+        //environmentApiUrl = "http://localhost:5109";
+        environmentApiUrl = "http://raylinder-api.azurewebsites.net";
         logLevel = LogLevel.Trace;
         break;
     case "Production":
