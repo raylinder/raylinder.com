@@ -1,6 +1,6 @@
-@raylinder.API_HostAddress = http://localhost:5109
+﻿@raylinder.API_HostAddress = http://raylinder-api.azurewebsites.net
 
-GET {{raylinder.API_HostAddress}}/weatherforecast/
+GET {{raylinder.API_HostAddress}}/getprojects/
 Accept: application/json
 
 ###

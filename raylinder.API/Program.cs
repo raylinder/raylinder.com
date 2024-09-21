@@ -25,14 +25,9 @@ if (env != null)
 
     builder.Services.AddCors(options =>
     {
-        options.AddDefaultPolicy(policy =>
+        options.AddPolicy("AllowSpecificOrigin", policy =>
         {
             policy.WithOrigins(environmentWebsiteUrl).AllowAnyHeader().AllowAnyMethod().AllowCredentials();
-
-            //options.AddPolicy(CorsAllowAll, builder =>
-            //{
-            //    builder.WithOrigins(environmentWebsiteUrl).AllowAnyHeader().WithMethods("GET, PATCH, DELETE, PUT, POST, OPTIONS");
-            //});
         });
     });
 }
@@ -51,7 +46,6 @@ builder.Services.AddLogging(loggingBuilder =>
 });
 
 builder.Services.AddScoped<IFeaturedWorkManager, FeaturedWorkManager>();
-builder.Services.AddScoped<IWeatherForecastManager, WeatherForecastManager>();
 
 // Add services to the container.
 
@@ -62,32 +56,14 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
 app.UseSwagger();
 app.UseSwaggerUI();
-//}
-
-//app.UseSwagger();
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseSwaggerUI();
-//}
-//if (!app.Environment.IsDevelopment())
-//{
-//    app.UseSwaggerUI(options =>
-//    {
-//        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-//        options.RoutePrefix = string.Empty;
-//    });
-//}
 
 // if getting "has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource." error, must use these 2 BEFORE app.UseCors();
 app.UseStaticFiles(); // 🔴 here it is
 app.UseRouting(); // 🔴 here it is
 
-app.UseCors();
+app.UseCors("AllowSpecificOrigin");
 app.UseAuthorization();
 
 app.MapControllers();
