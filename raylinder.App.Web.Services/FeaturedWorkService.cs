@@ -1,6 +1,6 @@
 ﻿
 using System.Text.Json;
-using raylinder.Models;
+using raylinder.Entities;
 
 namespace raylinder.App.Web.Services;
 

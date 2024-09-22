@@ -5,15 +5,23 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.App.Web", "raylinder.App.Web\raylinder.App.Web.csproj", "{D59B706D-AEE7-4CA5-80BE-EA2DBE1D2EEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.API", "raylinder.API\raylinder.API.csproj", "{952E71AD-0E87-4E6D-A96C-CAF51636CE00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.API", "raylinder.API\raylinder.API.csproj", "{952E71AD-0E87-4E6D-A96C-CAF51636CE00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.App.Mobile", "raylinder.App.Mobile\raylinder.App.Mobile.csproj", "{DC694E5F-1216-4E2B-9D5D-827A8D08471B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.App.Mobile", "raylinder.App.Mobile\raylinder.App.Mobile.csproj", "{DC694E5F-1216-4E2B-9D5D-827A8D08471B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.Models", "raylinder.API.Models\raylinder.Models.csproj", "{AF9C5F39-98CC-4723-80CC-344719EB506F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.Models", "raylinder.API.Models\raylinder.Models.csproj", "{AF9C5F39-98CC-4723-80CC-344719EB506F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.API.Domains", "raylinder.API.Domains\raylinder.API.Domains.csproj", "{35384D5F-45CF-499B-8565-8CC1648C7CB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.API.Domains", "raylinder.API.Domains\raylinder.API.Domains.csproj", "{35384D5F-45CF-499B-8565-8CC1648C7CB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.App.Web.Services", "raylinder.App.Web.Services\raylinder.App.Web.Services.csproj", "{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.App.Web.Services", "raylinder.App.Web.Services\raylinder.App.Web.Services.csproj", "{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.Repositories", "raylinder.Repositories\raylinder.Repositories.csproj", "{1A93C903-0ECB-409C-94A2-E7F6EB003B7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.Domains", "raylinder.Domains\raylinder.Domains.csproj", "{D811F454-2113-4429-8AF8-E4ECDDC2DE68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.Data", "raylinder.Data\raylinder.Data.csproj", "{C0E38146-21F2-49B4-A129-5DFCFC32FBEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.Entities", "raylinder.Entities\raylinder.Entities.csproj", "{11104461-9C9B-408D-9EF2-F038A76375ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +55,22 @@ Global
 		{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A93C903-0ECB-409C-94A2-E7F6EB003B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A93C903-0ECB-409C-94A2-E7F6EB003B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A93C903-0ECB-409C-94A2-E7F6EB003B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A93C903-0ECB-409C-94A2-E7F6EB003B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D811F454-2113-4429-8AF8-E4ECDDC2DE68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D811F454-2113-4429-8AF8-E4ECDDC2DE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D811F454-2113-4429-8AF8-E4ECDDC2DE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D811F454-2113-4429-8AF8-E4ECDDC2DE68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E38146-21F2-49B4-A129-5DFCFC32FBEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E38146-21F2-49B4-A129-5DFCFC32FBEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E38146-21F2-49B4-A129-5DFCFC32FBEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E38146-21F2-49B4-A129-5DFCFC32FBEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11104461-9C9B-408D-9EF2-F038A76375ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11104461-9C9B-408D-9EF2-F038A76375ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11104461-9C9B-408D-9EF2-F038A76375ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11104461-9C9B-408D-9EF2-F038A76375ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

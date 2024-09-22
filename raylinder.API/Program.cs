@@ -1,4 +1,7 @@
 ﻿using raylinder.API.Domains;
+using raylinder.Domains;
+using raylinder.Entities;
+using raylinder.Repositories;
 
 var environmentWebsiteUrl = "";
 
@@ -41,6 +44,9 @@ builder.Services.AddLogging(loggingBuilder =>
     }
 });
 
+builder.Services.AddScoped<IBaseRepository, BaseRepository>();
+builder.Services.AddScoped<IFeaturedWorkRepository<WorkProject>, FeaturedWorkRepository<WorkProject>>();
+builder.Services.AddScoped<IFeaturedWorkDomain, FeaturedWorkDomain>();
 builder.Services.AddScoped<IFeaturedWorkManager, FeaturedWorkManager>();
 
 builder.Services.AddControllers();

@@ -1,5 +1,5 @@
 ﻿
-namespace raylinder.Models;
+namespace raylinder.Entities;
 
 public class WorkProject
 {

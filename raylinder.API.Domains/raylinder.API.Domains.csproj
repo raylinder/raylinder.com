@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\raylinder.API.Models\raylinder.Models.csproj" />
+    <ProjectReference Include="..\raylinder.Domains\raylinder.Domains.csproj" />
+    <ProjectReference Include="..\raylinder.Entities\raylinder.Entities.csproj" />
   </ItemGroup>
 
 </Project>

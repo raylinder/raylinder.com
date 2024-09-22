@@ -1,4 +1,4 @@
-﻿using raylinder.Models;
+﻿using raylinder.Entities;
 
 namespace raylinder.API.Domains;
 
