@@ -2,6 +2,7 @@
 using raylinder.API.Domains;
 
 namespace raylinder.API.Controllers;
+
 public class ExperienceController : Controller
 {
     private readonly IExperienceManager _experienceManager;
