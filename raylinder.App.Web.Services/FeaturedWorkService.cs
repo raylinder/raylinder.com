@@ -24,5 +24,4 @@ public class FeaturedWorkService : IFeaturedWorkService
 
         return JsonSerializer.Deserialize<IEnumerable<WorkProject>>(await response.Content.ReadAsStringAsync(), _baseService.JsonSerializerOptions) ?? Array.Empty<WorkProject>();
     }
-
 }

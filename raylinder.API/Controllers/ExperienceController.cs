@@ -12,6 +12,9 @@ public class ExperienceController : Controller
         _experienceManager = experienceManager;
     }
 
-    [HttpGet("GetTotals")]
-    public async Task<JsonResult> Get() => new JsonResult(await _experienceManager.GetTotals());
+    [HttpGet("GetWorkExperiences")]
+    public async Task<JsonResult> Get() => new JsonResult(await _experienceManager.GetWorkExperiences());
+
+    [HttpGet("GetSkills")]
+    public async Task<JsonResult> GetTotals() => new JsonResult(await _experienceManager.GetSkills());
 }

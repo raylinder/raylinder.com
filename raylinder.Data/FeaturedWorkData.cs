@@ -2,16 +2,16 @@
 
 namespace raylinder.Data;
 
-public class FeaturedWorkData<T> where T : WorkProject, new()
+public class FeaturedWorkData
 {
-    public IEnumerable<T> WorkProjects { get; set; }
+    public IEnumerable<WorkProject> WorkProjects { get; set; }
 
     public FeaturedWorkData()
     {
         WorkProjects = WorkProjectsData;
     }
 
-    private IEnumerable<T> WorkProjectsData = new List<T>
+    private IEnumerable<WorkProject> WorkProjectsData = new List<WorkProject>
     {
         new() {
             Title = "Workforce Management Software & Solutions - Synel Americas (Time America, Inc)",
@@ -68,5 +68,4 @@ public class FeaturedWorkData<T> where T : WorkProject, new()
             WebsiteUrl = "https://www.navysbirprogram.com/"
         }
     };
-
 }

@@ -4,17 +4,14 @@ namespace raylinder.Repositories;
 
 public class FeaturedWorkRepository<T> : IFeaturedWorkRepository<T> where T : WorkProject, new()
 {
-    private IBaseRepository _baseRepository { get; }
-    private IEnumerable<T> entities;
+    private IEnumerable<T> _entities;
 
-    public FeaturedWorkRepository(IBaseRepository baseRepository)
+    public FeaturedWorkRepository()
     {
-        _baseRepository = baseRepository;
-
-        entities = new Data.FeaturedWorkData<T>().WorkProjects;
+        _entities = (IEnumerable<T>?)new Data.FeaturedWorkData().WorkProjects;
     }
 
-    public Task<T> GetByTitle(string title) => Task.FromResult(entities.FirstOrDefault(e => e.Title == title));
+    public Task<T> GetByTitle(string title) => Task.FromResult(_entities.FirstOrDefault(e => e.Title == title));
 
-    public Task<IEnumerable<T>> All() => Task.FromResult(entities);
+    public Task<IEnumerable<T>> All() => Task.FromResult(_entities);
 }

@@ -1,6 +1,9 @@
-﻿namespace raylinder.API.Domains;
+﻿using raylinder.Entities;
+
+namespace raylinder.API.Domains;
 
 public interface IExperienceManager
 {
-    Task<double[]> GetTotals();
+    Task<IEnumerable<Skill>> GetSkills();
+    Task<IEnumerable<WorkExperience>> GetWorkExperiences();
 }

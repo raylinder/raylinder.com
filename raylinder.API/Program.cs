@@ -44,7 +44,9 @@ builder.Services.AddLogging(loggingBuilder =>
     }
 });
 
-builder.Services.AddScoped<IBaseRepository, BaseRepository>();
+builder.Services.AddScoped<IExperienceRepository<WorkExperience>, ExperienceRepository<WorkExperience>>();
+builder.Services.AddScoped<IExperienceDomain, ExperienceDomain>();
+builder.Services.AddScoped<IExperienceManager, ExperienceManager>();
 builder.Services.AddScoped<IFeaturedWorkRepository<WorkProject>, FeaturedWorkRepository<WorkProject>>();
 builder.Services.AddScoped<IFeaturedWorkDomain, FeaturedWorkDomain>();
 builder.Services.AddScoped<IFeaturedWorkManager, FeaturedWorkManager>();

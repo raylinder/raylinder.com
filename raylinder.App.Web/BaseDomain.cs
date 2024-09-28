@@ -5,13 +5,14 @@ namespace RayLinder;
 
 public class BaseDomain : IBaseDomain
 {
-    public BaseDomain(IFeaturedWorkService featuredWorkService, ILocalStorageService localStorageService)
+    public BaseDomain(IExperienceService experienceService, IFeaturedWorkService featuredWorkService, ILocalStorageService localStorageService)
     {
+        ExperienceService = experienceService;
         FeaturedWorkService = featuredWorkService;
         LocalStorageService = localStorageService;
     }
 
+    public IExperienceService ExperienceService { get; set; }
     public IFeaturedWorkService FeaturedWorkService { get; set; }
-
     public ILocalStorageService LocalStorageService { get; }
 }

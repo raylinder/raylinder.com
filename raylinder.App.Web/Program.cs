@@ -39,6 +39,7 @@ builder.Services.AddBlazoredLocalStorage();
 
 builder.Services.AddScoped<IBaseDomain, BaseDomain>();
 builder.Services.AddScoped<IBaseService, BaseService>();
+builder.Services.AddScoped<IExperienceService, ExperienceService>();
 builder.Services.AddScoped<IFeaturedWorkService, FeaturedWorkService>();
 
 builder.Services.AddLogging(logging => logging.SetMinimumLevel(logLevel));

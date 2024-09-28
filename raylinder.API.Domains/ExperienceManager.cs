@@ -1,26 +1,27 @@
 ﻿
+using raylinder.Domains;
+using raylinder.Entities;
+
 namespace raylinder.API.Domains;
 
 public class ExperienceManager : IExperienceManager
 {
-    public Task<double[]> GetTotals()
+    private readonly IExperienceDomain _experienceDomain;
+
+    public ExperienceManager(IExperienceDomain experienceDomain)
     {
-        int[] _data = { 2018, 2017, 2017, 2016, 2011, 2012, 2004, 2004, 2004, 2018, 2010 };
-        string[] _labels = { "Blazor", "React", "Angular", "ASP.NET Core", "ASP.NET MVC", "ASP.NET Web API", "ASP.NET Web Forms", "C#", "Microsoft SQL Server", "Neo4j", "Web Service API" };
+        _experienceDomain = experienceDomain;
+    }
 
-        var arraySize = _data.Count();
-        var totals = new double[arraySize];
-        var i = 0;
+    public async Task<IEnumerable<WorkExperience>> GetWorkExperiences()
+    {
+        return await _experienceDomain.GetAllWorkExperiences();
+    }
 
-        foreach (var yr in _data)
-        {
-            var total = DateTime.Now.Year - yr;
+    public async Task<IEnumerable<Skill>> GetSkills()
+    {
+        var blah = _experienceDomain.GetSkills();
 
-            totals[i] = total;
-            _labels[i] = $"{_labels[i]} - {total} yrs";
-            i++;
-        }
-
-        return Task.FromResult(totals);
+        return await _experienceDomain.GetSkills();
     }
 }

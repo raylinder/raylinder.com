@@ -36,7 +36,7 @@
     <Content Update="wwwroot\img\digitalairstrike_com_wp_wp-content_themes_divi-child_images_logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\img\www_laneterralever_com_hubfs_logo.png.png">
+    <Content Update="wwwroot\img\www_laneterralever_com_hubfs_logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\img\www_riester_com_contact.png">
