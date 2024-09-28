@@ -87,7 +87,7 @@
                                             <h5>@exp.Title?.ToUpper()</h5>
                                             <h5 class="text-primary fw-light">@exp.CompanyName</h5>
                                             <div class="text-secondary text-uppercase small">
-                                                @exp.Dates @if (!string.IsNullOrEmpty(exp.Location)){ <text> | </text> @exp.Location };
+                                                @exp.Dates @if (!string.IsNullOrEmpty(exp.Location)){ <text> | </text> @exp.Location }
                                             </div>
                                         </div>
                                         @if (exp.CompanyName == "")
@@ -168,7 +168,7 @@
         var skillList = new List<string>();
         var yearsList = new List<double>();
 
-        foreach (var skill in skills)
+        foreach (var skill in skills.OrderBy(o => o.Name))
         {
             skillList.Add($"{skill.Name} - {skill.TotalYears} yrs");
             yearsList.Add(skill.TotalYears);

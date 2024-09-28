@@ -20,8 +20,6 @@ public class ExperienceManager : IExperienceManager
 
     public async Task<IEnumerable<Skill>> GetSkills()
     {
-        var blah = _experienceDomain.GetSkills();
-
         return await _experienceDomain.GetSkills();
     }
 }
