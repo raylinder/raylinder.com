@@ -16,26 +16,35 @@
         </div>
         <div class="row mh-100">
             <div class="col-12 pt-3 mh-100">
-                <MudCarousel Class="mud-width-full" Style="height: 725px;" ShowArrows="true" ShowBullets="true" EnableSwipeGesture="true" AutoCycle="true" TData="object">
-                    @foreach (var project in projects)
-                    {
-                        <MudCarouselItem Transition="Transition.Fade">
-                            <MudCard Class="bg-black">
-                                <div class="d-flex" style="height:100%">
-                                    <MudCardMedia Image="@project.ImageUrl" Height="500" Class="rounded-2 mx-auto my-auto card-img-top align-text-top" />
-                                    @* <MudImage Fluid="true" Src="@project.ImageUrl" Alt="@project.Title" Class="mx-auto my-auto rounded-lg" ObjectFit="ObjectFit.Cover" ObjectPosition="ObjectPosition.Top" />*@
-                                </div>
-                                <MudCardContent Class="bg-black">
-                                    <MudText Typo="Typo.h5">@project.Title</MudText>
-                                    <MudText Typo="Typo.subtitle2" Class="text-dark">@project.Description</MudText>
-                                </MudCardContent>
-                                <MudCardActions>
-                                    <MudLink Class="btn btn-primary text-white" Href="@project.WebsiteUrl" Target="_blank">Visit Project</MudLink>
-                                </MudCardActions>
-                            </MudCard>
-                        </MudCarouselItem>
-                    }
-                </MudCarousel>
+                @if (projects.Count() == 0)
+                {
+                    <div class="m-auto text-center w-100">
+                        <div class="spinner-grow"></div>
+                    </div>
+                }
+                else
+                {
+                    <MudCarousel Class="mud-width-full" Style="height: 725px;" ShowArrows="true" ShowBullets="true" EnableSwipeGesture="true" AutoCycle="true" TData="object">
+                        @foreach (var project in projects)
+                        {
+                            <MudCarouselItem Transition="Transition.Fade">
+                                <MudCard Class="bg-black">
+                                    <div class="d-flex" style="height:100%">
+                                        <MudCardMedia Image="@project.ImageUrl" Height="500" Class="rounded-2 mx-auto my-auto card-img-top align-text-top" />
+                                        @* <MudImage Fluid="true" Src="@project.ImageUrl" Alt="@project.Title" Class="mx-auto my-auto rounded-lg" ObjectFit="ObjectFit.Cover" ObjectPosition="ObjectPosition.Top" />*@
+                                    </div>
+                                    <MudCardContent Class="bg-black">
+                                        <MudText Typo="Typo.h5">@project.Title</MudText>
+                                        <MudText Typo="Typo.subtitle2" Class="text-dark">@project.Description</MudText>
+                                    </MudCardContent>
+                                    <MudCardActions>
+                                        <MudLink Class="btn btn-primary text-white" Href="@project.WebsiteUrl" Target="_blank">Visit Project</MudLink>
+                                    </MudCardActions>
+                                </MudCard>
+                            </MudCarouselItem>
+                        }
+                    </MudCarousel>
+                }
             </div>
         </div>
     </div>

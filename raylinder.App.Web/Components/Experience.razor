@@ -26,8 +26,17 @@
                 </div>
                 <div class="row py-5">
                     <div class="col-12">
-                        <MudChart ChartType="ChartType.Donut" LegendPosition="Position.Start" Width="300px" Height="300px" InputData="@LoadXpTotals()" InputLabels="@_labels">
-                        </MudChart>
+                        @if (skills.Count() == 0)
+                        {
+                            <div class="m-auto text-center w-100">
+                                <div class="spinner-grow"></div>
+                            </div>
+                        }
+                        else
+                        {
+                            <MudChart ChartType="ChartType.Donut" LegendPosition="Position.Start" Width="300px" Height="300px" InputData="@LoadXpTotals()" InputLabels="@_labels">
+                            </MudChart>
+                        }
                     </div>
                 </div>
             </div>
@@ -41,81 +50,42 @@
                         </span>
                     </div>
                 </div>
+
                 <div class="row pt-5">
                     <div class="col-12">
-                        @foreach (var exp in workExperiences)
+                        @if (workExperiences.Count() == 0)
                         {
-                            if (exp.Alignment == "Right")
+                            <div class="m-auto text-center w-100">
+                                <div class="spinner-grow"></div>
+                            </div>
+                        }
+                        else
+                        {
+                            @foreach (var exp in workExperiences)
                             {
-                                <div class="row py-5">
-                                    <div class="col-4">
-                                        <div class="d-flex align-items-center justify-content-center text-center">
-                                            @if (string.IsNullOrEmpty(exp.ImageUrl))
-                                            {
-                                                <h1 class="text-primary fw-light text-uppercase">@exp.CompanyName</h1>
-                                            }
-                                            else
-                                            {
-                                                <img src="@exp.ImageUrl" class="rounded-0 w-75" alt="@exp.CompanyName" />
-                                            }
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="text-body-primary ps-4 py-2 text-uppercase border-start border-primary">
-                                            <h5>@exp.Title?.ToUpper()</h5>
-                                            <h5 class="text-primary fw-light">@exp.CompanyName</h5>
-                                            <div class="text-secondary text-uppercase small">
-                                                @exp.Dates | @exp.Location
-                                            </div>
-                                        </div>
-                                        <ul class="fs-6 py-3" style="list-style: disclosure-closed;">
-                                            @foreach (var description in exp.Descriptions)
-                                            {
-                                                <li>
-                                                    @description.Description
-                                                </li>
-                                            }
-                                        </ul>
-                                    </div>
-                                </div>
-                            }
-                            else if (exp.Alignment == "Left")
-                            {
-                                <div class="row py-5">
-                                    <div class="col-8">
-                                        <div class="text-body-primary ps-4 py-2 text-uppercase border-start border-primary">
-                                            <h5>@exp.Title?.ToUpper()</h5>
-                                            <h5 class="text-primary fw-light">@exp.CompanyName</h5>
-                                            <div class="text-secondary text-uppercase small">
-                                                @exp.Dates @if (!string.IsNullOrEmpty(exp.Location)){ <text> | </text> @exp.Location }
-                                            </div>
-                                        </div>
-                                        @if (exp.CompanyName == "")
-                                        {
-                                            var subExps = workExperiences.Where(w => w.ParentId == exp.Id);
-
-                                            <ul class="fs-6 py-3" style="list-style: none;">
-                                                @foreach (var sub in subExps)
+                                if (exp.Alignment == "Right")
+                                {
+                                    <div class="row py-5">
+                                        <div class="col-4">
+                                            <div class="d-flex align-items-center justify-content-center text-center">
+                                                @if (string.IsNullOrEmpty(exp.ImageUrl))
                                                 {
-                                                    <li class="border-top border-secondary py-4">
-                                                        <h5 class="text-primary fw-light">@sub.CompanyName</h5>
-                                                        <div class="text-secondary text-uppercase small pb-3">
-                                                            @sub.Location
-                                                        </div>
-                                                        <ul class="fs-6 pb-5" style="list-style: disclosure-closed;">
-                                                            @foreach (var subDecsription in sub.Descriptions)
-                                                            {
-                                                                <li>
-                                                                    @subDecsription.Description
-                                                                </li>
-                                                            }
-                                                        </ul>
-                                                    </li>
+                                                    <h1 class="text-primary fw-light text-uppercase">@exp.CompanyName</h1>
                                                 }
-                                            </ul>
-                                        }
-                                        else
-                                        {
+                                                else
+                                                {
+                                                    <img src="@exp.ImageUrl" class="rounded-0 w-75" alt="@exp.CompanyName" />
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="text-body-primary ps-4 py-2 text-uppercase border-start border-primary">
+                                                <h5>@exp.Title?.ToUpper()</h5>
+                                                <h5 class="text-primary fw-light">@exp.CompanyName</h5>
+                                                <div class="text-secondary text-uppercase small">
+                                                    @exp.Dates | @exp.Location
+                                                </div>
+                                            </div>
                                             <ul class="fs-6 py-3" style="list-style: disclosure-closed;">
                                                 @foreach (var description in exp.Descriptions)
                                                 {
@@ -124,21 +94,73 @@
                                                     </li>
                                                 }
                                             </ul>
-                                        }
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <div class="d-flex align-items-center justify-content-center text-center">
-                                            @if (string.IsNullOrEmpty(exp.ImageUrl))
+                                }
+                                else if (exp.Alignment == "Left")
+                                {
+                                    <div class="row py-5">
+                                        <div class="col-8">
+                                            <div class="text-body-primary ps-4 py-2 text-uppercase border-start border-primary">
+                                                <h5>@exp.Title?.ToUpper()</h5>
+                                                <h5 class="text-primary fw-light">@exp.CompanyName</h5>
+                                                <div class="text-secondary text-uppercase small">
+                                                    @exp.Dates @if (!string.IsNullOrEmpty(exp.Location))
+                                                    {
+                                                        <text> | </text> @exp.Location
+                                                    }
+                                                </div>
+                                            </div>
+                                            @if (exp.CompanyName == "")
                                             {
-                                                <h1 class="text-primary fw-light text-uppercase">@exp.CompanyName</h1>
+                                                var subExps = workExperiences.Where(w => w.ParentId == exp.Id);
+
+                                                <ul class="fs-6 py-3" style="list-style: none;">
+                                                    @foreach (var sub in subExps)
+                                                    {
+                                                        <li class="border-top border-secondary py-4">
+                                                            <h5 class="text-primary fw-light">@sub.CompanyName</h5>
+                                                            <div class="text-secondary text-uppercase small pb-3">
+                                                                @sub.Location
+                                                            </div>
+                                                            <ul class="fs-6 pb-5" style="list-style: disclosure-closed;">
+                                                                @foreach (var subDecsription in sub.Descriptions)
+                                                                {
+                                                                    <li>
+                                                                        @subDecsription.Description
+                                                                    </li>
+                                                                }
+                                                            </ul>
+                                                        </li>
+                                                    }
+                                                </ul>
                                             }
                                             else
                                             {
-                                                <img src="@exp.ImageUrl" class="rounded-0 w-50" alt="@exp.CompanyName" />
+                                                <ul class="fs-6 py-3" style="list-style: disclosure-closed;">
+                                                    @foreach (var description in exp.Descriptions)
+                                                    {
+                                                        <li>
+                                                            @description.Description
+                                                        </li>
+                                                    }
+                                                </ul>
                                             }
                                         </div>
+                                        <div class="col-4">
+                                            <div class="d-flex align-items-center justify-content-center text-center">
+                                                @if (string.IsNullOrEmpty(exp.ImageUrl))
+                                                {
+                                                    <h1 class="text-primary fw-light text-uppercase">@exp.CompanyName</h1>
+                                                }
+                                                else
+                                                {
+                                                    <img src="@exp.ImageUrl" class="rounded-0 w-50" alt="@exp.CompanyName" />
+                                                }
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                }
                             }
                         }
                     </div>
