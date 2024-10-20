@@ -1,0 +1,169 @@
+﻿@page "/Experience"
+
+@using raylinder.App.Mobile.Components.Layout
+@using raylinder.Entities
+
+@inject IBaseDomain _base
+
+<PageHeader />
+
+<div class="row">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <div class="h3 pb-2 mb-4 fw-light text-primary text-uppercase border-bottom border-secondary" id="Experience">
+                    Experience.
+                </div>
+            </div>
+        </div>
+        <div class="row py-5">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <span class="h5 pb-2 mb-4 fw-bolder text-primary text-uppercase border-bottom border-secondary" id="ssHeading2">
+                            Years of Experience.
+                        </span>
+                    </div>
+                </div>
+                <div class="row py-5">
+                    <div class="col-12">
+                        @if (skills.Count() == 0)
+                        {
+                            <div class="m-auto text-center w-100">
+                                <div class="spinner-grow"></div>
+                            </div>
+                        }
+                        else
+                        {
+                            <MudChart ChartType="ChartType.Donut" LegendPosition="Position.Start" Width="300px" Height="300px" InputData="@LoadXpTotals()" InputLabels="@_labels">
+                            </MudChart>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <span class="h5 pb-2 mb-4 fw-bolder text-primary text-uppercase border-bottom border-secondary" id="ssHeading2">
+                            Professional Experience.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row pt-5">
+                    <div class="col-12">
+                        @if (workExperiences.Count() == 0)
+                        {
+                            <div class="m-auto text-center w-100">
+                                <div class="spinner-grow"></div>
+                            </div>
+                        }
+                        else
+                        {
+                            <MudTimeline TimelineAlign="TimelineAlign.Start" TimelineOrientation="TimelineOrientation.Vertical" TimelinePosition="TimelinePosition.Left">
+
+                                @foreach (var exp in workExperiences)
+                                {
+                                    @if (exp.Alignment == "Left" || exp.Alignment == "Right")
+                                    {
+                                        <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Info" Elevation="25">
+                                            <MudPaper Elevation="0" Class="mt-n1 bg-transparent">
+                                                <MudText Color="Color.Info" Typo="Typo.h6">
+                                                    @exp.Dates
+                                                </MudText>
+                                                <MudText Typo="Typo.h6" Class="text-white text-uppercase" GutterBottom="true">
+                                                    @exp.Title
+                                                </MudText>
+                                                @if (exp.CompanyName == "")
+                                                {
+                                                    var subExps = workExperiences.Where(w => w.ParentId == exp.Id);
+
+                                                    <MudText Typo="Typo.body2">
+                                                        <ul class="fs-6 py-3" style="list-style: none;">
+                                                            @foreach (var sub in subExps)
+                                                            {
+                                                                <li class="border-top border-secondary py-4">
+                                                                    <h5 class="text-primary fw-light">@sub.CompanyName</h5>
+                                                                    <div class="text-secondary text-uppercase small pb-3">
+                                                                        @sub.Location
+                                                                    </div>
+                                                                    <ul class="fs-6 pb-5" style="list-style: disclosure-closed;">
+                                                                        @foreach (var subDescription in sub.Descriptions)
+                                                                        {
+                                                                            <li>
+                                                                                @subDescription.Description
+                                                                            </li>
+                                                                        }
+                                                                    </ul>
+                                                                </li>
+                                                            }
+                                                        </ul>
+                                                    </MudText>
+                                                }
+                                                else
+                                                {
+                                                    <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">
+                                                        @exp.CompanyName
+                                                    </MudText>
+                                                    <div class="text-secondary text-uppercase small pb-3">
+                                                        @exp.Location
+                                                    </div>
+                                                    <MudText Typo="Typo.body2">
+                                                        <ul class="fs-6 py-3" style="list-style: disclosure-closed;">
+                                                            @foreach (var description in exp.Descriptions)
+                                                            {
+                                                                <li>
+                                                                    @description.Description
+                                                                </li>
+                                                            }
+                                                        </ul>
+                                                    </MudText>
+                                                }
+                                            </MudPaper>
+                                        </MudTimelineItem>
+                                    }
+                                }
+                            </MudTimeline>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code
+{
+    private IEnumerable<Skill> skills = new List<Skill>();
+    private IEnumerable<WorkExperience> workExperiences = new List<WorkExperience>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        skills = await _base.ExperienceService.GetSkills();
+        workExperiences = await _base.ExperienceService.Get();
+    }
+
+    private string[] _labels = { "" };
+
+    private double[] LoadXpTotals()
+    {
+        var skillList = new List<string>();
+        var yearsList = new List<double>();
+
+        foreach (var skill in skills.OrderBy(o => o.Name))
+        {
+            skillList.Add($"{skill.Name} - {skill.TotalYears} yrs");
+            yearsList.Add(skill.TotalYears);
+        }
+
+        var totals = yearsList.ToArray();
+
+        _labels = skillList.ToArray();
+
+        return totals;
+    }
+}

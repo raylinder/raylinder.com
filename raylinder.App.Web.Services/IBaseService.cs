@@ -1,13 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Text.Json;
 
-namespace raylinder.App.Web.Services;
+namespace raylinder.App.Services;
 
 public interface IBaseService
 {
     public NavigationManager NavigationManager { get; }
-
-    public IHttpClientFactory HttpClientFactory { get; set; }
 
     //public ILocalStorageService LocalStorageService { get; }
 

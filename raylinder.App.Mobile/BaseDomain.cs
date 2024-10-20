@@ -1,7 +1,7 @@
 ﻿using Blazored.LocalStorage;
 using raylinder.App.Services;
 
-namespace RayLinder;
+namespace raylinder.App.Mobile;
 
 public class BaseDomain : IBaseDomain
 {

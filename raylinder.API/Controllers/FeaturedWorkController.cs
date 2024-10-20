@@ -2,6 +2,7 @@
 using raylinder.API.Domains;
 
 namespace raylinder.API.Controllers;
+
 public class FeaturedWorkController : Controller
 {
     private readonly IFeaturedWorkManager _featuredWorkManager;

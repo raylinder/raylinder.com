@@ -1,27 +1,29 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">raylinder.App.Mobile</a>
-    </div>
-</div>
+﻿<MudAppBar Elevation="1">
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer" />
+    <MudImage Src="images/icon.png" Width="32" Height="32" Alt="Ray Linder. Relentless. Results." Elevation="0" Class="me-4" />
+    <MudText Typo="@Typo.body1">Ray Linder. Relentless. Results.</MudText>
+    <MudSpacer />
+</MudAppBar>
+<MudDrawer @bind-Open="@_open" ClipMode="@DrawerClipMode.Always" Elevation="1" Anchor="Anchor.Start" Variant="@DrawerVariant.Responsive">
+    <!-- <MudDrawerHeader>
+        <MudText Typo="Typo.h6">My App</MudText>
+    </MudDrawerHeader> -->
+    <MudNavMenu>
+        <MudNavLink Match="@NavLinkMatch.All"><div class="py-2">About</div></MudNavLink>
+        <MudNavLink Match="@NavLinkMatch.All"><div class="py-2">Experience</div></MudNavLink>
+        <MudNavLink Match="@NavLinkMatch.All"><div class="py-2">Featured Work</div></MudNavLink>
+        <MudNavLink Match="@NavLinkMatch.All"><div class="py-2">Pet Projects</div></MudNavLink>
+        <MudNavLink Match="@NavLinkMatch.All"><div class="py-2">Social</div></MudNavLink>
+        <MudNavLink Match="@NavLinkMatch.All"><div class="py-2">Contact</div></MudNavLink>
+        <MudNavLink Match="@NavLinkMatch.All"><div class="py-2">Resume</div></MudNavLink>
+    </MudNavMenu>
+</MudDrawer>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+@code {
+    private bool _open = false;
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
+    private void ToggleDrawer()
+    {
+        _open = !_open;
+    }
+}

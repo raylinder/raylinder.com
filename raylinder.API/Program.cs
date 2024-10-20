@@ -12,21 +12,22 @@ if (env != null)
 {
     builder.Configuration.SetBasePath(env.ContentRootPath).AddEnvironmentVariables();
 
-    switch (env.EnvironmentName)
-    {
-        case "Local":
-        case "Development":
-            environmentWebsiteUrl = "http://localhost:5275";
-            break;
-        case "Production":
-            environmentWebsiteUrl = "http://www.raylinder.com";
-            break;
-    }
+    //switch (env.EnvironmentName)
+    //{
+    //    case "Local":
+    //    case "Development":
+    //        environmentWebsiteUrl = "http://localhost:5275";
+    //        break;
+    //    case "Production":
+    //        environmentWebsiteUrl = "http://www.raylinder.com";
+    //        break;
+    //}
 
     builder.Services.AddCors(options =>
     {
         options.AddDefaultPolicy(policy =>
-            policy.WithOrigins(environmentWebsiteUrl).AllowAnyHeader().AllowAnyMethod().AllowCredentials()
+            policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()
+        //policy.WithOrigins(environmentWebsiteUrl).AllowAnyHeader().AllowAnyMethod().AllowCredentials()
         );
     });
 }
@@ -61,7 +62,6 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseStaticFiles();
 app.UseRouting();
 
 app.UseCors();

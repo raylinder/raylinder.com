@@ -1,6 +1,6 @@
 ﻿using raylinder.Entities;
 
-namespace raylinder.App.Web.Services;
+namespace raylinder.App.Services;
 
 public interface IFeaturedWorkService
 {

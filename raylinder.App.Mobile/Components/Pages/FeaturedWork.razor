@@ -1,0 +1,72 @@
+﻿@page "/FeaturedWork"
+@using raylinder.App.Mobile.Components.Layout
+@using raylinder.Entities
+
+@inject NavigationManager _navigationManager
+@inject IBaseDomain _base
+
+<PageHeader />
+
+<div class="row">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <div class="h3 pb-2 mb-4 fw-light text-primary text-uppercase border-bottom border-secondary" id="FeaturedWork">
+                    Featured Work.
+                </div>
+            </div>
+        </div>
+        <div class="row mh-100">
+            <div class="col-12 pt-3 mh-100">
+                @if (projects.Count() == 0)
+                {
+                    <div class="m-auto text-center w-100">
+                        <div class="spinner-grow"></div>
+                    </div>
+                }
+                else
+                {
+                    <MudStack Spacing="3">
+                        @foreach (var project in projects)
+                        {
+                            <MudPaper Class="pa-4 bg-transparent shadow-none">
+                                <MudCard>
+                                    <div class="d-flex" style="height:100%">
+                                        <MudCardMedia Image="@project.ImageUrl" Height="300" Class="rounded-2 mx-auto my-auto card-img-top align-text-top" />
+                                    </div>
+                                    <MudCardContent>
+                                        <MudText Typo="Typo.h5">
+                                            @project.Title
+                                        </MudText>
+                                        <MudText Typo="Typo.subtitle2" Class="pt-2">
+                                            @project.Description
+                                        </MudText>
+                                    </MudCardContent>
+                                    <MudCardActions>
+                                        <MudButton Href="@project.WebsiteUrl" Class="m-2" Target="_blank" Variant="Variant.Filled" Color="Color.Info">
+                                            Visit Project
+                                        </MudButton>
+                                    </MudCardActions>
+                                </MudCard>
+                            </MudPaper>
+                        }
+                    </MudStack>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    private List<WorkProject>? projects = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        var workProjects = await _base.FeaturedWorkService.Get();
+
+        projects = workProjects.ToList();
+    }
+}

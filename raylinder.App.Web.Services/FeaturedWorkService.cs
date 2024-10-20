@@ -2,7 +2,7 @@
 using System.Text.Json;
 using raylinder.Entities;
 
-namespace raylinder.App.Web.Services;
+namespace raylinder.App.Services;
 
 public class FeaturedWorkService : IFeaturedWorkService
 {
@@ -22,6 +22,6 @@ public class FeaturedWorkService : IFeaturedWorkService
             throw new Exception(response.ReasonPhrase);
         }
 
-        return JsonSerializer.Deserialize<IEnumerable<WorkProject>>(await response.Content.ReadAsStringAsync(), _baseService.JsonSerializerOptions) ?? Array.Empty<WorkProject>();
+        return JsonSerializer.Deserialize<IEnumerable<WorkProject>>(await response.Content.ReadAsStringAsync(), _baseService.JsonSerializerOptions) ?? new List<WorkProject>();
     }
 }

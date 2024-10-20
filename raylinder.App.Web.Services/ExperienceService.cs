@@ -1,8 +1,7 @@
-﻿
-using raylinder.Entities;
+﻿using raylinder.Entities;
 using System.Text.Json;
 
-namespace raylinder.App.Web.Services;
+namespace raylinder.App.Services;
 
 public class ExperienceService : IExperienceService
 {
@@ -22,7 +21,7 @@ public class ExperienceService : IExperienceService
             throw new Exception(response.ReasonPhrase);
         }
 
-        return JsonSerializer.Deserialize<IEnumerable<WorkExperience>>(await response.Content.ReadAsStringAsync(), _baseService.JsonSerializerOptions) ?? Array.Empty<WorkExperience>();
+        return JsonSerializer.Deserialize<IEnumerable<WorkExperience>>(await response.Content.ReadAsStringAsync(), _baseService.JsonSerializerOptions) ?? new List<WorkExperience>();
     }
 
     public async Task<IEnumerable<Skill>> GetSkills()

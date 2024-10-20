@@ -13,15 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.Models", "raylind
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.API.Domains", "raylinder.API.Domains\raylinder.API.Domains.csproj", "{35384D5F-45CF-499B-8565-8CC1648C7CB6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.App.Web.Services", "raylinder.App.Web.Services\raylinder.App.Web.Services.csproj", "{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.App.Services", "raylinder.App.Web.Services\raylinder.App.Services.csproj", "{6D3ED041-0DDB-4C60-8C5D-682DA6DFBF9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.Repositories", "raylinder.Repositories\raylinder.Repositories.csproj", "{1A93C903-0ECB-409C-94A2-E7F6EB003B7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.Repositories", "raylinder.Repositories\raylinder.Repositories.csproj", "{1A93C903-0ECB-409C-94A2-E7F6EB003B7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.Domains", "raylinder.Domains\raylinder.Domains.csproj", "{D811F454-2113-4429-8AF8-E4ECDDC2DE68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.Domains", "raylinder.Domains\raylinder.Domains.csproj", "{D811F454-2113-4429-8AF8-E4ECDDC2DE68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.Data", "raylinder.Data\raylinder.Data.csproj", "{C0E38146-21F2-49B4-A129-5DFCFC32FBEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.Data", "raylinder.Data\raylinder.Data.csproj", "{C0E38146-21F2-49B4-A129-5DFCFC32FBEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raylinder.Entities", "raylinder.Entities\raylinder.Entities.csproj", "{11104461-9C9B-408D-9EF2-F038A76375ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylinder.Entities", "raylinder.Entities\raylinder.Entities.csproj", "{11104461-9C9B-408D-9EF2-F038A76375ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

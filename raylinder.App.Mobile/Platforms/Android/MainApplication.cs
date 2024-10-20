@@ -2,7 +2,8 @@
 using Android.Runtime;
 
 namespace raylinder.App.Mobile.Platforms.Android;
-[Application]
+
+[Application(UsesCleartextTraffic = true)]
 public class MainApplication : MauiApplication
 {
     public MainApplication(nint handle, JniHandleOwnership ownership)
