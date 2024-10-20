@@ -1,21 +1,26 @@
 ﻿@inherits LayoutComponentBase
 
+@using raylinder.App.Mobile.Components.Layout
+
 <MudThemeProvider IsDarkMode="true" Theme="DarkTheme" />
 <MudMudAppBarProvider />
 <MudNavMenuProvider />
 
 <MudLayout>
-    <div class="top-row px-4">
-        @* <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a> *@
+
+    <div class="top-row px-0">
+
+        <PageHeader />
     </div>
 
-    <main style="margin-bottom: 58px;">
-        <article class="content px-4">
+    <main class="row">
+        <article class="content px-4 pb-5">
             @Body
         </article>
     </main>
 
     <NavBottomMenu />
+
 </MudLayout>
 
 
