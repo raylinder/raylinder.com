@@ -1,23 +1,9 @@
 ﻿@page "/"
 
-@* <MudAppBar Elevation="1">
-    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer" />
-    <MudImage Src="images/icon.png" Width="32" Height="32" Alt="Ray Linder. Relentless. Results." Elevation="0" Class="me-4" />
-    <MudText Typo="@Typo.body1">Ray Linder. Relentless. Results.</MudText>
-    <MudSpacer />
-</MudAppBar>
-<MudDrawer @bind-Open="@_open" ClipMode="@DrawerClipMode.Always" Elevation="1" Anchor="Anchor.Start" Variant="@DrawerVariant.Mini">
-    <MudNavMenu>
-        <MudNavLink Match="@NavLinkMatch.All" Icon="@Icons.Material.Filled.Home" Href="/"><div class="py-2">Home</div></MudNavLink>
-        <MudNavLink Match="@NavLinkMatch.All" Icon="@Icons.Material.Filled.Person" Href="/About"><div class="py-2">About</div></MudNavLink>
-        <MudNavLink Match="@NavLinkMatch.All" Icon="@Icons.Material.Filled.WorkHistory" Href="/Experience"><div class="py-2">Experience</div></MudNavLink>
-        <MudNavLink Match="@NavLinkMatch.All" Icon="@Icons.Material.Filled.FeaturedPlayList" Href="/FeaturedWork"><div class="py-2">Featured Work</div></MudNavLink>
-        <MudNavLink Match="@NavLinkMatch.All" Icon="@Icons.Material.Filled.SnippetFolder" Href="/PetProjects"><div class="py-2">Pet Projects</div></MudNavLink>
-    </MudNavMenu>
-</MudDrawer> *@
+@using raylinder.App.Mobile.Components.Layout
 
-<div class="pt-5">
-    <div class="pt-5">
+<div class="p-0 pt-5">
+    <div class="p-0 pt-5">
         <div class="justify-content-center align-items-center text-center" style="min-height: 100vh;">
             <div class="row py-5 my-5">
                 <div class="col-12">
@@ -65,11 +51,13 @@
                 <div class="row py-5">
                     <div class="col-4">
                         <div class="list-group text-uppercase">
-                            <a class="list-group-item list-group-item-action" download target="_blank" href="resume/ray_linder_resume_20240819.pdf">Download PDF</a>
+                            <a download target="_blank" href="./resume/ray_linder_resume_20240819.pdf">
+                                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.FileDownload" Color="Color.Primary" Size="Size.Small">Download PDF</MudButton>
+                            </a>
                         </div>
                     </div>
                     <div class="col-8">
-                        <div class="d-flex align-items-center justify-content-center text-center">
+                        <div class="text-center">
                             <img src="https://raylinderstorage.blob.core.windows.net/assets/Ray_Linder_Resume_20240922.png" class="rounded-2 w-100" alt="Ray Linder Resume" />
                         </div>
                     </div>
@@ -86,32 +74,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 mb-4">
+                    <div class="col-12">
                         <MudCard Class="shadow-sm">
-                            <MudCardHeader>
-                                <CardHeaderContent>
-                                    <MudText Typo="Typo.h6">raylinder.com Release Status</MudText>
-                                </CardHeaderContent>
+                            <MudCardHeader Class="pb-0">
+                                <MudText Typo="Typo.h6" Class="fw-light pb-0">raylinder.com Release Status</MudText>
                             </MudCardHeader>
                             <MudCardContent>
-                                @* <p class="text-muted card-subtitle">
-                                Build
-                                </p>
-                                <p class="card-text">
-                                <img src="https://dev.azure.com/raylinder/raylinder_com/_apis/build/status/raylinder_com-Build?branchName=release" alt="" />
-                                </p>
-                                <p class="text-muted card-subtitle mt-3">
-                                Deployment
-                                </p>
-                                <p class="card-text">
-                                <img src="https://vsrm.dev.azure.com/raylinder/_apis/public/Release/badge/011b2b75-20aa-42c8-8056-3f55b89be7cf/2/2" alt="" />
-                                </p>
-                                <p class="text-muted card-subtitle mt-3">
-                                Time Spent
-                                </p>
-                                <p class="card-text">
-                                <img src="https://wakatime.com/badge/user/2210aad6-9744-4617-aab9-43ea05f33826/project/dc402183-babc-4e0c-a28e-c3dfbbad3d94.svg?style=flat" alt="wakatime" />
-                                </p> *@
                                 <MudStack Spacing="3">
                                     <MudPaper Class="border-1 pa-4">
                                         <MudText Typo="Typo.subtitle2">
@@ -140,19 +108,6 @@
                                 </MudStack>
                             </MudCardContent>
                         </MudCard>
-                        @* <div class="card shadow-sm">
-                        <div class="card-header">
-                        <h5 class="mb-0">raylinder.com Release Status</h5>
-                        </div>
-                        <div class="card-body">
-                        <p class="text-muted card-subtitle">Build</p>
-                        <p class="card-text"><img src="https://dev.azure.com/raylinder/raylinder_com/_apis/build/status/raylinder_com-Build?branchName=release" alt="" /></p>
-                        <p class="text-muted card-subtitle mt-3">Deployment</p>
-                        <p class="card-text"><img src="https://vsrm.dev.azure.com/raylinder/_apis/public/Release/badge/011b2b75-20aa-42c8-8056-3f55b89be7cf/2/2" alt="" /></p>
-                        <p class="text-muted card-subtitle mt-3">Time Spent</p><img src="https://wakatime.com/badge/user/2210aad6-9744-4617-aab9-43ea05f33826/project/dc402183-babc-4e0c-a28e-c3dfbbad3d94.svg?style=flat" alt="wakatime">
-                        <p class="card-text"></p>
-                        </div>
-                        </div> *@
                     </div>
                 </div>
             </div>
@@ -161,12 +116,7 @@
 </div>
 
 @code {
-    // private bool _open = false;
 
-    // private void ToggleDrawer()
-    // {
-    //     _open = !_open;
-    // }
 }
 
 
