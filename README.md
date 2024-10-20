@@ -1,0 +1,1 @@
+Here's the project for http://raylinder.com which includes a web application, API, and mobile app (in-progress). The project is a continued work-in-progress which will be updated/upgraded and new features added to learn a new "thing". You reach me via LinkedIn https://www.linkedin.com/in/raylinder.
