@@ -1,7 +1,5 @@
 ﻿@page "/Experience"
 
-@using raylinder.Entities
-
 @inject IBaseDomain _base
 
 <div class="row">
@@ -32,7 +30,7 @@
                         }
                         else
                         {
-                            <MudChart ChartType="ChartType.Donut" LegendPosition="Position.Start" Width="300px" Height="300px" InputData="@LoadXpTotals()" InputLabels="@_labels">
+                            <MudChart ChartType="ChartType.Donut" LegendPosition="Position.Start" Width="150px" Height="150px" InputData="@LoadXpTotals()" InputLabels="@_labels">
                             </MudChart>
                         }
                     </div>

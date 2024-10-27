@@ -1,10 +1,8 @@
 ﻿@page "/"
 
-@using raylinder.App.Mobile.Components.Layout
-
 <div class="p-0 pt-5">
     <div class="p-0 pt-5">
-        <div class="justify-content-center align-items-center text-center" style="min-height: 100vh;">
+        <div class="justify-content-center align-items-center text-center" style="min-height: 80vh;">
             <div class="row py-5 my-5">
                 <div class="col-12">
                     <div class="text-center">
@@ -21,7 +19,7 @@
         </div>
         <div class="row">
             <div class="col-12 py-5">
-                <div class="row pt-5">
+                <div class="row pt-4">
                     <div class="col-12">
                         <div class="h4 pb-2 mb-4 fw-light text-primary text-uppercase border-bottom border-secondary" id="Social">
                             Social.
@@ -30,40 +28,24 @@
                 </div>
                 <div class="row">
                     <div class="col-12 pt-3">
-                        <h4>LinkedIn</h4>
+                        <h5>LinkedIn</h5>
                         <p>
                             <a href="http://www.linkedin.com/in/raylinder" target="_blank">http://www.linkedin.com/in/raylinder</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-3">
+                        <h5>Github</h5>
+                        <p>
+                            <a href="https://github.com/raylinder" target="_blank">https://www.github.com/raylinder</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
         <Contact />
-        <div class="row">
-            <div class="col-12 py-5">
-                <div class="row pt-5">
-                    <div class="col-12">
-                        <div class="h4 pb-2 mb-4 fw-light text-primary text-uppercase border-bottom border-secondary" id="Resume">
-                            Resume.
-                        </div>
-                    </div>
-                </div>
-                <div class="row py-5">
-                    <div class="col-4">
-                        <div class="list-group text-uppercase">
-                            <a download target="_blank" href="./resume/ray_linder_resume_20240819.pdf">
-                                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.FileDownload" Color="Color.Primary" Size="Size.Small">Download PDF</MudButton>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-8">
-                        <div class="text-center">
-                            <img src="https://raylinderstorage.blob.core.windows.net/assets/Ray_Linder_Resume_20240922.png" class="rounded-2 w-100" alt="Ray Linder Resume" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Resume />
         <div class="row">
             <div class="col-12 py-5">
                 <div class="row pt-5">

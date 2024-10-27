@@ -41,38 +41,62 @@
     <PackageProjectUrl>http://raylinder.com</PackageProjectUrl>
     <Description>Ray Linder's resume and professional experience.</Description>
     <Title>Ray Linder's Resume</Title>
+    <Copyright>2024 Ray Linder</Copyright>
+    <SignAssembly>True</SignAssembly>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://www.github.com/raylinder/raylinder.com</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>resume</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
     <ApplicationTitle>Ray's Resume</ApplicationTitle>
+    <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
+    <ApplicationVersion>2</ApplicationVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
     <ApplicationTitle>Ray's Resume</ApplicationTitle>
+    <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
+    <ApplicationVersion>2</ApplicationVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android34.0|AnyCPU'">
     <ApplicationTitle>Ray's Resume</ApplicationTitle>
+    <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
+    <AndroidKeyStore>False</AndroidKeyStore>
+    <ApplicationVersion>2</ApplicationVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows10.0.19041.0|AnyCPU'">
     <ApplicationTitle>Ray's Resume</ApplicationTitle>
+    <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
+    <ApplicationVersion>2</ApplicationVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
     <ApplicationTitle>Ray's Resume</ApplicationTitle>
+    <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
+    <ApplicationVersion>2</ApplicationVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-maccatalyst|AnyCPU'">
     <ApplicationTitle>Ray's Resume</ApplicationTitle>
+    <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
+    <ApplicationVersion>2</ApplicationVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android34.0|AnyCPU'">
     <ApplicationTitle>Ray's Resume</ApplicationTitle>
+    <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
+    <AndroidKeyStore>False</AndroidKeyStore>
+    <ApplicationVersion>2</ApplicationVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows10.0.19041.0|AnyCPU'">
     <ApplicationTitle>Ray's Resume</ApplicationTitle>
+    <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
+    <ApplicationVersion>2</ApplicationVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -95,19 +119,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <MauiAsset Remove="Resources\Raw\Ray_Linder_Resume_20240819.pdf" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Resources\Images\20220228_152121~3_552x552.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Resources\Raw\Ray_Linder_Resume_20240819.pdf">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -160,5 +183,12 @@
     <Content Update="wwwroot\img\www_riester_com_contact.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <MauiAsset Update="Resources\Raw\Ray_Linder_Resume_20240819.pdf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </MauiAsset>
   </ItemGroup>
 </Project>
